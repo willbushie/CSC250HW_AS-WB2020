@@ -1,56 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!-- THE TOP LAYOUT -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button_FName"
-        android:layout_width="150dp"
-        android:layout_height="90dp"
-        android:onClick="fNameButtonClick"
-        android:text="Update First Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351" />
-
+    <!-- THE ROLL RESULTS (INDIVIDUAL) TEXT VIEW -->
     <TextView
-        android:id="@+id/textView_FName"
-        android:layout_width="wrap_content"
+        android:id="@+id/rollResults_textview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="John"
-        app:layout_constraintBottom_toTopOf="@+id/button_FName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:gravity="center"
+        android:text="1+2+3+4+5"
+        android:textColor="#FFEB3B"
+        android:textSize="24sp" />
 
+    <!-- THE ROLL RESULTS (TOTAL) BUTTON -->
     <TextView
-        android:id="@+id/textView_LName"
-        android:layout_width="wrap_content"
+        android:id="@+id/rollResultsTotal_textview"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Doe"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_FName"
-        app:layout_constraintVertical_bias="0.275" />
+        android:gravity="center"
+        android:text="15"
+        android:textColor="#B0E375"
+        android:textSize="72sp" />
 
-    <Button
-        android:id="@+id/button_LName"
-        android:layout_width="150dp"
-        android:layout_height="95dp"
-        android:onClick="lNameButtonClick"
-        android:text="Update Last Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_LName"
-        app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- THE KEY BUTTON LAYOUT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- THE KEYPAD, ROLL & PERCENTILE BUTTON LAYOUT -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:orientation="vertical">
+
+            <!-- THE 7, 8, 9 BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33"
+                android:orientation="horizontal">
+
+                <!-- THE SEVEN BUTTON -->
+                <Button
+                    android:id="@+id/sevenKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="sevenKeypad_buttonActivate"
+                    android:text="7" />
+
+                <!-- THE EIGHT BUTTON -->
+                <Button
+                    android:id="@+id/eightKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="eightKeypad_buttonActivate"
+                    android:text="8" />
+
+                <!-- THE NINE BUTTON -->
+                <Button
+                    android:id="@+id/nineKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".33"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="nineKeypad_buttonActivate"
+                    android:text="9" />
+            </LinearLayout>
+
+            <!-- THE 4, 5, & 6 BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33"
+                android:orientation="horizontal">
+
+                <!-- THE FOUR BUTTON -->
+                <Button
+                    android:id="@+id/fourKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="fourKeypad_buttonActivate"
+                    android:text="4" />
+
+                <!-- THE FIVE BUTTON -->
+                <Button
+                    android:id="@+id/fiveKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="fiveKeypad_buttonActivate"
+                    android:text="5" />
+
+                <!-- THE SIX BUTTON -->
+                <Button
+                    android:id="@+id/sixKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="sixKeypad_buttonActivate"
+                    android:text="6" />
+
+            </LinearLayout>
+
+            <!-- THE ONE THROUGH THREE BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".33"
+                android:orientation="horizontal">
+
+                <!-- THE ONE BUTTON -->
+                <Button
+                    android:id="@+id/oneKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="oneKeypad_buttonActivate"
+                    android:text="1" />
+
+                <!-- THE TWO BUTTON -->
+                <Button
+                    android:id="@+id/twoKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="twoKeypad_buttonActivate"
+                    android:text="2" />
+
+                <!-- THE THREE BUTTON -->
+                <Button
+                    android:id="@+id/threeKeypad_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="threeKeypad_buttonActivate"
+                    android:text="3" />
+            </LinearLayout>
+
+            <!-- THE PERCENTAGE & ROLL BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".33"
+                android:orientation="horizontal">
+
+                <!-- THE ROLL BUTTON -->
+                <Button
+                    android:id="@+id/roll_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight=".5"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="roll_buttonActivate"
+                    android:text="Roll" />
+
+                <!-- THE PERCENTILE BUTTON -->
+                <Button
+                    android:id="@+id/percentile_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="percentile_buttonActivate"
+                    android:text="Percentile" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- THE DICE SELECTION BUTTON LAYOUTS-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:orientation="vertical">
+
+            <!-- THE D4 & D6 BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- THE D4 BUTTON -->
+                <Button
+                    android:id="@+id/d4_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D4Keypad_buttonActivate"
+                    android:text="D4" />
+
+                <!-- THE D6 BUTTON -->
+                <Button
+                    android:id="@+id/d6_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D6Keypad_buttonActivate"
+                    android:text="D6" />
+
+            </LinearLayout>
+
+            <!-- THE D8 & D10 BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- THE D8 BUTTON -->
+                <Button
+                    android:id="@+id/d8_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D8Keypad_buttonActivate"
+                    android:text="D8" />
+
+                <!-- THE D10 BUTTON -->
+                <Button
+                    android:id="@+id/d10_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D10Keypad_buttonActivate"
+                    android:text="D10" />
+            </LinearLayout>
+
+            <!-- THE D12 & D20 BUTTON LAYOUT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <!-- THE D12 BUTTON -->
+                <Button
+                    android:id="@+id/d12_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D12Keypad_buttonActivate"
+                    android:text="D12" />
+
+                <!-- THE D20 BUTTON -->
+                <Button
+                    android:id="@+id/d20_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/purple_500"
+                    android:onClick="D20Keypad_buttonActivate"
+                    android:text="D20" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
