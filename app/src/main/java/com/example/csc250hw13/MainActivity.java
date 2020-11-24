@@ -2,7 +2,6 @@ package com.example.csc250hw13;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -11,7 +10,6 @@ import java.util.Random;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,59 +26,76 @@ public class MainActivity extends AppCompatActivity {
 
     // RESET METHODS
     // reset ONLY number keypad
-    public void resetNumbers(View v)
+    public void resetNumbers()
     {
         // reset variables
         numOfRolls = 0;
         // reset styles for all buttons
         Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.
+        oneKeypad_button.setBackgroundColor(Color.BLUE);
         oneKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button twoKeypad_button = this.findViewById(R.id.twoKeypad_button);
+        twoKeypad_button.setBackgroundColor(Color.BLUE);
+        twoKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button threeKeypad_button = this.findViewById(R.id.threeKeypad_button);
+        threeKeypad_button.setBackgroundColor(Color.BLUE);
+        threeKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button fourKeypad_button = this.findViewById(R.id.fourKeypad_button);
+        fourKeypad_button.setBackgroundColor(Color.BLUE);
+        fourKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button fiveKeypad_button = this.findViewById(R.id.fiveKeypad_button);
+        fiveKeypad_button.setBackgroundColor(Color.BLUE);
+        fiveKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button sixKeypad_button = this.findViewById(R.id.sixKeypad_button);
+        sixKeypad_button.setBackgroundColor(Color.BLUE);
+        sixKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button sevenKeypad_button = this.findViewById(R.id.sevenKeypad_button);
+        sevenKeypad_button.setBackgroundColor(Color.BLUE);
+        sevenKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
+        Button eightKeypad_button = this.findViewById(R.id.eightKeypad_button);
+        eightKeypad_button.setBackgroundColor(Color.BLUE);
+        eightKeypad_button.setTextColor(Color.WHITE);
 
-        Button oneKeypad_button = this.findViewById(R.id.oneKeypad_button);
-        oneKeypad_button.setBackgroundColor(Color.WHITE);
-        oneKeypad_button.setTextColor(Color.BLACK);
-
-
+        Button nineKeypad_button = this.findViewById(R.id.nineKeypad_button);
+        nineKeypad_button.setBackgroundColor(Color.BLUE);
+        nineKeypad_button.setTextColor(Color.WHITE);
     }
     // reset ONLY dice selection keypad
-    public void resetDiceSelection(View v)
+    public void resetDiceSelection()
     {
         // reset variables
         diceSelection = 0;
         // reset styles for all buttons
+        Button d4_button = this.findViewById(R.id.d4_button);
+        d4_button.setBackgroundColor(Color.BLUE);
+        d4_button.setTextColor(Color.WHITE);
 
+        Button d6_button = this.findViewById(R.id.d6_button);
+        d6_button.setBackgroundColor(Color.BLUE);
+        d6_button.setTextColor(Color.WHITE);
+
+        Button d8_button = this.findViewById(R.id.d8_button);
+        d8_button.setBackgroundColor(Color.BLUE);
+        d8_button.setTextColor(Color.WHITE);
+
+        Button d10_button = this.findViewById(R.id.d10_button);
+        d10_button.setBackgroundColor(Color.BLUE);
+        d10_button.setTextColor(Color.WHITE);
+
+        Button d12_button = this.findViewById(R.id.d12_button);
+        d12_button.setBackgroundColor(Color.BLUE);
+        d12_button.setTextColor(Color.WHITE);
+
+        Button d20_button = this.findViewById(R.id.d20_button);
+        d20_button.setBackgroundColor(Color.BLUE);
+        d20_button.setTextColor(Color.WHITE);
     }
 
 
@@ -90,53 +105,61 @@ public class MainActivity extends AppCompatActivity {
     public void roll_buttonActivate(View v)
     {
         // identify text views later used
-        TextView rollResutls_textview = this.findViewById(R.id.rollResults_textview);
+        TextView rollResults_textview = this.findViewById(R.id.rollResults_textview);
         TextView rollResultsTotal_textview = this.findViewById(R.id.rollResultsTotal_textview);
 
         // if unable to process the request
         if (numOfRolls == 0 || diceSelection ==0)
         {
-            // exit the method
-            return;
+            // do nothing
+            int y = 1;
         }
-
         // execute the roll(s) (# of dice * # of sides)
         int finalTotal = 0;
+        String finalStringTotal = "";
         String finalAdditionStatement = "";
         int count = 0;
         while (count < numOfRolls)
         {
             // generate random number based on diceSelection
             Random r = new Random();
-            int roll = r.nextInt(diceSelection+1);
+            int roll = r.nextInt(diceSelection)+1;
             // update values
             finalTotal += roll;
             String strToInt = Integer.toString(roll);
             finalAdditionStatement += strToInt;
+            finalStringTotal = Integer.toString(finalTotal);
+            if (count+1 == numOfRolls)
+            {
+                int x = 1;
+            }
+            else
+            {
+                finalAdditionStatement += "+";
+            }
             // update count
             count++;
-            finalAdditionStatement += " + ";
         }
-
         // update the appropriate textViews ("@+id/rollResults_textview" & "@+id/rollResultsTotal_textview")
-        rollResutls_textview.setText(finalAdditionStatement);
-        rollResultsTotal_textview.setText(finalTotal);
+        rollResults_textview.setText(finalAdditionStatement);
+        rollResultsTotal_textview.setText(finalStringTotal);
     }
 
     // for the percentile button press (click "@+id/percentile_button")
     public void percentile_buttonActivate(View v)
     {
         // identify text views to later be updated
-        TextView rollResutls_textview = this.findViewById(R.id.rollResults_textview);
+        TextView rollResults_textview = this.findViewById(R.id.rollResults_textview);
         TextView rollResultsTotal_textview = this.findViewById(R.id.rollResultsTotal_textview);
 
         // roll a random number from 1 to 100 & store it
         Random r = new Random();
         int randInt = r.nextInt(100);
+        // convert int to string
+        String strToInt = Integer.toString(randInt);
         // update the textview values
-        rollResutls_textview.setText(randInt);
-        rollResultsTotal_textview.setText(randInt);
-
+        rollResults_textview.setText(strToInt);
+        rollResultsTotal_textview.setText(strToInt);
     }
 
     // ALL KEYPAD BUTTON METHODS (NUMBERS ONLY)
@@ -257,7 +280,7 @@ public class MainActivity extends AppCompatActivity {
     {
         resetDiceSelection();
         // update the number of rolls
-        diceSelection = 4;
+        diceSelection = 6;
         // update the button theme to be active
         Button d6_button = this.findViewById(R.id.d6_button);
         d6_button.setBackgroundColor(Color.WHITE);

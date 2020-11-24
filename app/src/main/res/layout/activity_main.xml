@@ -46,7 +46,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".33"
                 android:orientation="horizontal">
 
                 <!-- THE SEVEN BUTTON -->
@@ -55,7 +54,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".33"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="sevenKeypad_buttonActivate"
                     android:text="7" />
 
@@ -65,7 +63,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".33"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="eightKeypad_buttonActivate"
                     android:text="8" />
 
@@ -75,7 +72,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight=".33"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="nineKeypad_buttonActivate"
                     android:text="9" />
             </LinearLayout>
@@ -93,7 +89,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="fourKeypad_buttonActivate"
                     android:text="4" />
 
@@ -103,7 +98,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="fiveKeypad_buttonActivate"
                     android:text="5" />
 
@@ -113,7 +107,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="sixKeypad_buttonActivate"
                     android:text="6" />
 
@@ -132,7 +125,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="oneKeypad_buttonActivate"
                     android:text="1" />
 
@@ -142,7 +134,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="twoKeypad_buttonActivate"
                     android:text="2" />
 
@@ -152,7 +143,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="threeKeypad_buttonActivate"
                     android:text="3" />
             </LinearLayout>
@@ -170,7 +160,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight=".5"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="roll_buttonActivate"
                     android:text="Roll" />
 
@@ -179,7 +168,6 @@
                     android:id="@+id/percentile_button"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="percentile_buttonActivate"
                     android:text="Percentile" />
 
@@ -207,7 +195,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D4Keypad_buttonActivate"
                     android:text="D4" />
 
@@ -217,7 +204,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D6Keypad_buttonActivate"
                     android:text="D6" />
 
@@ -235,7 +221,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D8Keypad_buttonActivate"
                     android:text="D8" />
 
@@ -245,7 +230,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D10Keypad_buttonActivate"
                     android:text="D10" />
             </LinearLayout>
@@ -262,7 +246,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D12Keypad_buttonActivate"
                     android:text="D12" />
 
@@ -272,7 +255,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/purple_500"
                     android:onClick="D20Keypad_buttonActivate"
                     android:text="D20" />
             </LinearLayout>
